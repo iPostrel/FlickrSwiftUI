@@ -7,18 +7,48 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9269E122284C9DA600945B6F /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9269E121284C9DA600945B6F /* LogoView.swift */; };
+		9269E124284C9DE800945B6F /* WelcomeText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9269E123284C9DE800945B6F /* WelcomeText.swift */; };
 		929469A1284691CF004908D2 /* FlickrSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929469A0284691CF004908D2 /* FlickrSwiftUIApp.swift */; };
-		929469A3284691CF004908D2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929469A2284691CF004908D2 /* ContentView.swift */; };
 		929469A5284691D0004908D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 929469A4284691D0004908D2 /* Assets.xcassets */; };
 		929469A8284691D0004908D2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 929469A7284691D0004908D2 /* Preview Assets.xcassets */; };
+		929469B0284693D9004908D2 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929469AF284693D9004908D2 /* LoginView.swift */; };
+		929469B22847C403004908D2 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929469B12847C403004908D2 /* AuthenticationView.swift */; };
+		929469B42847C70B004908D2 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929469B32847C70B004908D2 /* SignUpView.swift */; };
+		929469B62847C73D004908D2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929469B52847C73D004908D2 /* HomeView.swift */; };
+		929469B92847CA1E004908D2 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929469B82847CA1E004908D2 /* ViewRouter.swift */; };
+		929469BB2847CAB4004908D2 /* RedirectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929469BA2847CAB4004908D2 /* RedirectionView.swift */; };
+		929469BD2847F6D3004908D2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929469BC2847F6D3004908D2 /* SettingsView.swift */; };
+		929469BF2847FCAB004908D2 /* PhotoDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929469BE2847FCAB004908D2 /* PhotoDetailsView.swift */; };
+		929469C1284801D0004908D2 /* PopularPhotosModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929469C0284801D0004908D2 /* PopularPhotosModel.swift */; };
+		929469C7284BD57A004908D2 /* FlickrServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929469C6284BD57A004908D2 /* FlickrServices.swift */; };
+		929469C9284BD661004908D2 /* PhotosListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929469C8284BD661004908D2 /* PhotosListView.swift */; };
+		929469CE284BD897004908D2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929469CD284BD897004908D2 /* Constants.swift */; };
+		929469D0284BE2C9004908D2 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929469CF284BE2C9004908D2 /* UserSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9269E121284C9DA600945B6F /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
+		9269E123284C9DE800945B6F /* WelcomeText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeText.swift; sourceTree = "<group>"; };
 		9294699D284691CF004908D2 /* FlickrSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		929469A0284691CF004908D2 /* FlickrSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrSwiftUIApp.swift; sourceTree = "<group>"; };
-		929469A2284691CF004908D2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		929469A4284691D0004908D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		929469A7284691D0004908D2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		929469AF284693D9004908D2 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		929469B12847C403004908D2 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
+		929469B32847C70B004908D2 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		929469B52847C73D004908D2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		929469B82847CA1E004908D2 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
+		929469BA2847CAB4004908D2 /* RedirectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedirectionView.swift; sourceTree = "<group>"; };
+		929469BC2847F6D3004908D2 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		929469BE2847FCAB004908D2 /* PhotoDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsView.swift; sourceTree = "<group>"; };
+		929469C0284801D0004908D2 /* PopularPhotosModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularPhotosModel.swift; sourceTree = "<group>"; };
+		929469C3284984ED004908D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		929469C428498501004908D2 /* FlickrSwiftUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FlickrSwiftUI.entitlements; sourceTree = "<group>"; };
+		929469C6284BD57A004908D2 /* FlickrServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrServices.swift; sourceTree = "<group>"; };
+		929469C8284BD661004908D2 /* PhotosListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListView.swift; sourceTree = "<group>"; };
+		929469CD284BD897004908D2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		929469CF284BE2C9004908D2 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +81,14 @@
 		9294699F284691CF004908D2 /* FlickrSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				929469C428498501004908D2 /* FlickrSwiftUI.entitlements */,
+				929469C3284984ED004908D2 /* Info.plist */,
+				929469CC284BD882004908D2 /* Constants */,
+				929469C22848021F004908D2 /* Models */,
+				929469C5284BD536004908D2 /* Services */,
+				929469B72847C9FB004908D2 /* Utilities */,
+				929469AE284693BA004908D2 /* UI */,
 				929469A0284691CF004908D2 /* FlickrSwiftUIApp.swift */,
-				929469A2284691CF004908D2 /* ContentView.swift */,
 				929469A4284691D0004908D2 /* Assets.xcassets */,
 				929469A6284691D0004908D2 /* Preview Content */,
 			);
@@ -65,6 +101,72 @@
 				929469A7284691D0004908D2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		929469AE284693BA004908D2 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				929469CB284BD7F3004908D2 /* View */,
+				929469CA284BD751004908D2 /* Components */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		929469B72847C9FB004908D2 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				929469B82847CA1E004908D2 /* ViewRouter.swift */,
+				929469CF284BE2C9004908D2 /* UserSettings.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		929469C22848021F004908D2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				929469C0284801D0004908D2 /* PopularPhotosModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		929469C5284BD536004908D2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				929469C6284BD57A004908D2 /* FlickrServices.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		929469CA284BD751004908D2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				929469C8284BD661004908D2 /* PhotosListView.swift */,
+				9269E121284C9DA600945B6F /* LogoView.swift */,
+				9269E123284C9DE800945B6F /* WelcomeText.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		929469CB284BD7F3004908D2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				929469B12847C403004908D2 /* AuthenticationView.swift */,
+				929469BA2847CAB4004908D2 /* RedirectionView.swift */,
+				929469AF284693D9004908D2 /* LoginView.swift */,
+				929469B32847C70B004908D2 /* SignUpView.swift */,
+				929469B52847C73D004908D2 /* HomeView.swift */,
+				929469BE2847FCAB004908D2 /* PhotoDetailsView.swift */,
+				929469BC2847F6D3004908D2 /* SettingsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		929469CC284BD882004908D2 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				929469CD284BD897004908D2 /* Constants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +239,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				929469A3284691CF004908D2 /* ContentView.swift in Sources */,
+				929469C9284BD661004908D2 /* PhotosListView.swift in Sources */,
+				929469BF2847FCAB004908D2 /* PhotoDetailsView.swift in Sources */,
+				929469B0284693D9004908D2 /* LoginView.swift in Sources */,
+				929469C7284BD57A004908D2 /* FlickrServices.swift in Sources */,
+				929469B92847CA1E004908D2 /* ViewRouter.swift in Sources */,
+				929469B42847C70B004908D2 /* SignUpView.swift in Sources */,
+				929469BD2847F6D3004908D2 /* SettingsView.swift in Sources */,
+				929469CE284BD897004908D2 /* Constants.swift in Sources */,
+				929469BB2847CAB4004908D2 /* RedirectionView.swift in Sources */,
+				929469C1284801D0004908D2 /* PopularPhotosModel.swift in Sources */,
+				9269E122284C9DA600945B6F /* LogoView.swift in Sources */,
+				929469B62847C73D004908D2 /* HomeView.swift in Sources */,
+				929469D0284BE2C9004908D2 /* UserSettings.swift in Sources */,
+				9269E124284C9DE800945B6F /* WelcomeText.swift in Sources */,
+				929469B22847C403004908D2 /* AuthenticationView.swift in Sources */,
 				929469A1284691CF004908D2 /* FlickrSwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,11 +380,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FlickrSwiftUI/FlickrSwiftUI.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FlickrSwiftUI/Preview Content\"";
+				DEVELOPMENT_TEAM = 65428QNNLJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FlickrSwiftUI/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -292,11 +411,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FlickrSwiftUI/FlickrSwiftUI.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FlickrSwiftUI/Preview Content\"";
+				DEVELOPMENT_TEAM = 65428QNNLJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FlickrSwiftUI/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
