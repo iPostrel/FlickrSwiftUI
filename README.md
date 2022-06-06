@@ -36,7 +36,3 @@ The heart of this app is in the AsyncImage which downloads Photos from Flickr as
 
 The app is supported in portrait mode only for all device families - iPhone SE(1,2,3), 6s, 6s Plus, 7, 7 Plus, 8, 8 Plus, X, XR, XS, XS Max, 11, 11 Pro, 11 Pro Max, 12 mini, 12, 12 Pro, 12 Pro Max, 13 mini, 13, 13 Pro, 13 Pro Max, iPad, iPad mini, iPad Pro. The user interface is adaptive across all these devices.
 
-
-Update README.md
-
-
