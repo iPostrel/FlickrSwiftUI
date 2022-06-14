@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct PopularPhotosModel: Decodable {
+struct PopularPhotosModel: Codable {
     let photos: Photos?
     let stat: String?
 }
 
-struct Photos: Decodable {
+struct Photos: Codable {
     let page: Int?
     let pages: Int?
     let perpage: Int?
@@ -20,7 +20,7 @@ struct Photos: Decodable {
     let photo: [Photo?]
 }
 
-struct Photo: Equatable, Decodable, Hashable {
+struct Photo: Equatable, Codable, Hashable {
     let id: String?
     let owner: String?
     let secret: String?

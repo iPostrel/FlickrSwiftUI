@@ -8,20 +8,26 @@
 import SwiftUI
 
 struct PhotosListView: View {
-    @StateObject fileprivate var dataSource = FlickrServices()
+    @EnvironmentObject private var dataSource: FlickrServices
+    
+    private let textProgress = "Fetching data, please wait..."
+    private let textNoPhoto = "There are no photos yet"
     
     var body: some View {
         ScrollView {
             LazyVStack {
                 ForEach(Array(dataSource.photos), id:\.self) { photo in
-                    NavigationLink(destination: PhotoDetailsView(photo: photo, url: dataSource.urlImageBuilder(photo: photo))) {
-                        PhotoRowView(url: dataSource.urlImageBuilder(photo: photo))
+                    NavigationLink(destination: PhotoDetailsView(photo: photo, url: URLBuilder.createImage(photo: photo))) {
+                        PhotoRowView(url: URLBuilder.createImage(photo: photo))
                     }
                 }
             }
         }
         .padding(.horizontal)
         .listStyle(.automatic)
+        .onAppear() {
+            dataSource.loadContent()
+        }
         .safeAreaInset(edge: .bottom) {
             VStack {
                 if !dataSource.photos.isEmpty {
@@ -35,10 +41,10 @@ struct PhotosListView: View {
         }
         .overlay() {
             if dataSource.isLoadingPage && dataSource.photos.isEmpty {
-                ProgressView("Fetching data, please wait...")
+                ProgressView(textProgress)
                     .progressViewStyle(CircularProgressViewStyle(tint: .accentColor))
             } else if dataSource.photos.isEmpty {
-                Text("There are no photos yet")
+                Text(textNoPhoto)
                     .foregroundStyle(.secondary)
                     .padding(.bottom)
             }

@@ -9,7 +9,6 @@ import SwiftUI
 
 struct SettingsView: View {
     @EnvironmentObject private var viewRouter: ViewRouter
-    @ObservedObject private var userSettings = UserSettings()
     
     private let textLogo = "Settings"
     private let textLogOut = "Log out of your account"
@@ -27,7 +26,6 @@ struct SettingsView: View {
     }
     
     func signOutUser() {
-        userSettings.username = ""
         withAnimation {
             viewRouter.currentPage = .logInPage
         }

@@ -9,7 +9,6 @@ import SwiftUI
 
 struct LoginView: View {
     @EnvironmentObject private var viewRouter: ViewRouter
-    @ObservedObject private var userSettings = UserSettings()
     
     @State private var logInProcessing = false
     @State private var logInErrorMessage = ""
@@ -65,7 +64,7 @@ struct LoginView: View {
     }
     
     private func logInUser(userEmail: String, userPassword: String) {
-        userSettings.username = userEmail
+        viewRouter.userToken = userEmail.data(using: .utf8)
         withAnimation {
             viewRouter.currentPage = .homePage
         }

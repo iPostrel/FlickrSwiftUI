@@ -9,7 +9,6 @@ import SwiftUI
 
 struct SignUpView: View {
     @EnvironmentObject private var viewRouter: ViewRouter
-    @ObservedObject private var userSettings = UserSettings()
     
     @State private var email = ""
     @State private var password = ""
@@ -25,6 +24,7 @@ struct SignUpView: View {
     
     var body: some View {
         VStack(spacing: 15) {
+            Spacer()
             LogoView()
             WelcomeText()
             Spacer()
@@ -65,7 +65,7 @@ struct SignUpView: View {
     }
     
     private func signUpUser(userEmail: String, userPassword: String) {
-        userSettings.username = userEmail
+        viewRouter.userToken = userEmail.data(using: .utf8)
         withAnimation {
             viewRouter.currentPage = .homePage
         }

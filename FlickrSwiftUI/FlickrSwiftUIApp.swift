@@ -12,6 +12,7 @@ struct FlickrSwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
             AuthenticationView()
+                .environment(\.managedObjectContext, PhotoContainer().persistentContainer.viewContext)
         }
     }
 }

@@ -6,30 +6,26 @@
 //
 
 import Foundation
+import SwiftUI
 import Combine
 
 @MainActor
 class FlickrServices: ObservableObject {
     @Published var photos = [Photo]()
+    @Published var photoInfo: PhotoInfo?
     @Published var isLoadingPage = false
+    @Published var isLoadingImage = false
+    @Published var data: Data?
     
-    private var currentPage = 1
     private var canLoadMorePages = true
     private var cancellables = Set<AnyCancellable>()
-    private let constants = Constants()
     
-    init() {
-        loadContent()
-    }
     
-    private func loadContent() {
-        guard !isLoadingPage && canLoadMorePages else {
-            return
-        }
-        
+    func loadContent() {
+        guard !isLoadingPage && canLoadMorePages else { return }
         isLoadingPage = true
         
-        URLSession.shared.dataTaskPublisher(for: urlPopularBuilder())
+        URLSession.shared.dataTaskPublisher(for: URLBuilder.createPopular())
             .map(\.data)
             .decode(type: PopularPhotosModel.self, decoder: JSONDecoder())
             .receive(on: DispatchQueue.main)
@@ -42,41 +38,49 @@ class FlickrServices: ObservableObject {
             })
             .catch({ _ in Just(self.photos) })
             .sink(receiveCompletion: { _ in
-                    print ("receiveCompletion: [\(self.photos.count)]")
-                },
+                self.isLoadingPage = false
+            },
                   receiveValue: { value in
-                    if let photos = value as? [Photo] {
-                        self.photos = photos
-                    }
-                })
+                if let photos = value as? [Photo] {
+                    self.photos = photos
+                }
+            })
             .store(in: &cancellables)
     }
     
-    
-    func urlPopularBuilder() -> URL {
-        var components = URLComponents()
-        components.scheme = constants.scheme
-        components.host = constants.host
-        components.path = constants.path
+    func loadImageInfo(photo: Photo) {
+        guard !isLoadingImage else { return }
+        isLoadingImage = true
         
-        components.queryItems = [
-            URLQueryItem(name: "method", value: constants.methodPopular),
-            URLQueryItem(name: "api_key", value: constants.apiKey),
-            URLQueryItem(name: "user_id", value: constants.userID),
-            URLQueryItem(name: "format", value: "json"),
-            URLQueryItem(name: "nojsoncallback", value: "1")
-        ]
-        return URL(string: components.string!)!
-    }
-    
-    func urlImageBuilder(photo: Photo) -> URL {
-        let pathImade = "/\(photo.server ?? "")/\(photo.id ?? "")_\(photo.secret ?? "")_\(constants.sizeSuffix).jpg"
+        photoInfo = nil
+        data = nil
         
-        var components = URLComponents()
-        components.scheme = constants.scheme
-        components.host = constants.hostImage
-        components.path = pathImade
+        var newData: Data?
         
-        return URL(string: components.string!)!
+        URLSession.shared.dataTaskPublisher(for: URLBuilder.createImageInfo(photo: photo))
+            .map({ a in
+                newData = a.data
+                return a.data
+            })
+            .decode(type: PhotoInfoModel.self, decoder: JSONDecoder())
+            .receive(on: DispatchQueue.main)
+            .handleEvents(receiveOutput: { response in
+                self.isLoadingImage = false
+            })
+            .map({ response -> PhotoInfo? in
+                self.photoInfo = response.photo
+                return self.photoInfo
+            })
+            .catch({ _ in Just(self.photoInfo) })
+            .sink(receiveCompletion: { _ in
+                self.isLoadingImage = false
+            },
+                  receiveValue: { value in
+                if let photo = value {
+                    self.photoInfo = photo
+                    self.data = newData
+                }
+            })
+            .store(in: &cancellables)
     }
 }

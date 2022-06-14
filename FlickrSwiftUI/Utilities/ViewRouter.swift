@@ -6,12 +6,26 @@
 //
 
 import Foundation
+import SwiftUI
 
 class ViewRouter: ObservableObject {
-    @Published var currentPage: Page = .logInPage
+    @KeychainPropertyWrapper(key: Constants.Keychain.oAuthToken, account: Constants.Keychain.account) var userToken
+    
+    @Published var currentPage: Page = .logInPage {
+        didSet {
+            if currentPage == .logInPage {
+                userToken = nil
+            }
+        }
+    }
     
     init() {
-        currentPage = UserSettings().username.isEmpty ? .logInPage : .homePage
+        if let userToken = userToken {
+            let userTokenString = String(data: userToken, encoding: .utf8)
+            if userTokenString != "" {
+                currentPage = .homePage
+            }
+        }
     }
 }
 

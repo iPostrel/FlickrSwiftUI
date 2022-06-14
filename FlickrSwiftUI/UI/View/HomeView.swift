@@ -25,11 +25,13 @@ struct HomeView: View {
             .navigationTitle(textLogo)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: { navigate = true }) {                        Image(systemName: "slider.horizontal.3")
+                    Button(action: { navigate = true }) {
+                        Image(systemName: "slider.horizontal.3")
                     }
                 }
             }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
