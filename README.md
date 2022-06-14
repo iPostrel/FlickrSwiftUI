@@ -4,7 +4,14 @@
  This is a demo app where you can see that how you can to use Flickr service api to get and show etc..  www.flickr.com/services/api/
  
 **This app has been in written in SwiftUI 3.0. It requires XCode 13.4 on the machine and ios 15.5 on the device to run. **
+ 
+| Login View | SignUp View |
+| ------------ | ------------- |
+| <img src="FlickrSwiftUI/Assets.xcassets/Screenshots/LoginView.imageset/LoginView.png" alt="LoginView" width="300" /> | <img src="FlickrSwiftUI/Assets.xcassets/Screenshots/SignUpView.imageset/SignUpView.png" alt="SignUpView" width="300" /> |
 
+| Home View | Photo Details View | Settings View | 
+| ------------ | ------------- | ------------- |
+| <img src="FlickrSwiftUI/Assets.xcassets/Screenshots/HomeView.imageset/HomeView.png" alt="HomeView" width="300" /> | <img src="FlickrSwiftUI/Assets.xcassets/Screenshots/PhotoDetailsView.imageset/PhotoDetailsView.png" alt="PhotoDetailsView" width="300" /> | <img src="FlickrSwiftUI/Assets.xcassets/Screenshots/SettingsView.imageset/SettingsView.png" alt="SettingsView" width="300" /> |
 
 #### Explicit requirements:  
 
